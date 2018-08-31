@@ -4,7 +4,7 @@
 library(biomaRt)
 mart = useMart("ensembl")
 ensembl = useDataset("hsapiens_gene_ensembl", mart = mart)
-allgenes <- getBM(attributes=c('start_position','end_position',"transcript_length",'ensembl_gene_id',"go_id"), mart = ensembl)
+allgenes <- getBM(attributes=c("transcript_length",'ensembl_gene_id',"go_id"), mart = ensembl)
 
 ## then filter go with minimum size 10, measure average transcript lengths and order them
 library(dplyr)
